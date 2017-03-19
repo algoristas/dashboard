@@ -1,4 +1,4 @@
-# Brunch + React + Babel/ES6
+# Algorists dashboard -- Brunch + React + Babel/ES6
 
 This is a modern JS skeleton with React for [Brunch](http://brunch.io).
 
