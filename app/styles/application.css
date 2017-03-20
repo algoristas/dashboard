@@ -45,3 +45,7 @@ h5 > a {
     text-align: center;
     color: red;
 }
+
+#select-user-form {
+    margin-bottom: 25px;
+}

@@ -1,20 +1,11 @@
 import React from 'react';
 import {Table} from 'react-bootstrap';
+import {GlobalData} from 'data/Data'
 
 export default class GlobalScoreboard extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            users: [
-                {username: 'rendon', solved: 5},
-                {username: 'ulisesmdzmtz', solved: 6},
-                {username: 'chess1424', solved: 6},
-                {username: 'ruben.rgzr', solved: 3},
-                {username: 'hopkins', solved: 1},
-                {username: 'dventura11', solved: 5},
-                {username: 'zatarain', solved: 1}
-            ]
-        }
+        this.state = GlobalData
         this.getScoreboard = this.getScoreboard.bind(this);
     }
 

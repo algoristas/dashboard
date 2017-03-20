@@ -26,8 +26,8 @@ export default class App extends React.Component {
 
                 <div id='dashboard'>
                     <Nav bsStyle='pills' activeKey={this.state.activeKey} onSelect={this.handleSelect}>
-                        <NavItem eventKey={'global'}>Global dashboard</NavItem>
-                        <NavItem eventKey={'individual'}>Individual dashboard</NavItem>
+                        <NavItem eventKey={'global'}>Global scoreboard</NavItem>
+                        <NavItem eventKey={'individual'}>Individual scoreboard</NavItem>
                     </Nav>
                     { this.state.activeKey == 'global' && <GlobalScoreboard /> }
                     { this.state.activeKey == 'individual' && <IndividualScoreboard /> }
