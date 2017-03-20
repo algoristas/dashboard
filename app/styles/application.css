@@ -18,3 +18,30 @@ a:hover {
 h5 > a {
   text-decoration: underline;
 }
+
+#header {
+    color: green;
+    size: 2em;
+}
+
+#content {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#dashboard {
+}
+
+.page-title {
+    text-align: center;
+}
+
+.status-yes {
+    text-align: center;
+    color: green;
+}
+
+.status-no {
+    text-align: center;
+    color: red;
+}

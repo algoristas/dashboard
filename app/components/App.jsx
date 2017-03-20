@@ -1,29 +1,37 @@
 import React from 'react';
+import {Nav, NavItem} from 'react-bootstrap';
+
+import GlobalScoreboard from 'components/GlobalScoreboard'
+import IndividualScoreboard from 'components/IndividualScoreboard'
 
 export default class App extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            weeks: [
-                { date: '01-01-2017 - 07-01-2017', problemSetters: ['Rafael', 'Carlos']},
-                { date: '10-01-2017 - 17-01-2017', problemSetters: ['Ulises'] }
-            ]
+            activeKey: 'global'
         }
+        this.handleSelect = this.handleSelect.bind(this);
     }
+
+    handleSelect(key) {
+        this.setState({activeKey: key});
+    }
+
     render() {
         return (
-            <div id="content">
-                <ul>
-                    { 
-                        this.state.weeks.map(function(w) {
-                            return (
-                                <div>
-                                    <h2>{ w.date } -- {w.problemSetters}</h2>
-                                </div>
-                            );
-                        })
-                    }
-                </ul>
+            <div id='content'>
+                <div id='header'>
+                    <center><h1>Algorists</h1></center>
+                </div>
+
+                <div id='dashboard'>
+                    <Nav bsStyle='pills' activeKey={this.state.activeKey} onSelect={this.handleSelect}>
+                        <NavItem eventKey={'global'}>Global dashboard</NavItem>
+                        <NavItem eventKey={'individual'}>Individual dashboard</NavItem>
+                    </Nav>
+                    { this.state.activeKey == 'global' && <GlobalScoreboard /> }
+                    { this.state.activeKey == 'individual' && <IndividualScoreboard /> }
+                </div>
             </div>
         );
     }
