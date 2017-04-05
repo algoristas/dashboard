@@ -17,7 +17,7 @@ export default class ProblemSetBoard extends React.Component {
   }
 
   selectSet(e) {
-      this.setState({selectedSet: e.target.value-1});
+      this.setState({selectedSet: e.target.value});
   }
 
   render() {
@@ -30,7 +30,7 @@ export default class ProblemSetBoard extends React.Component {
             <FormControl componentClass="select" placeholder="select" onChange={this.selectSet}>
               {
                 this.state.weeks.map((week, key) => {
-                    return (<option key={key} >{key+1}</option>)
+                    return (<option key={key} value={key} >{`Week ${key+1}`}</option>)
                 })
               }
             </FormControl>
@@ -57,8 +57,8 @@ export default class ProblemSetBoard extends React.Component {
                     <td>{p.title}</td>
                     <td>{p.topics.join(', ')}</td>
                     <td>{p.id}</td>
-                    <td>{p.judge}</td>
-                    <td>{p.url}</td>
+                    <td><a href={p.judge}>{p.judge}</a></td>
+                    <td><a href={p.url}>{p.url}</a></td>
                   </tr>
                 )
               })
