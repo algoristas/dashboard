@@ -1,23 +1,23 @@
-import React from 'react';
-import {Table, FormControl, FormGroup, ControlLabel } from 'react-bootstrap';
-import {ProblemSetData} from 'data/Data';
+import React from 'react'
+import {Table, FormControl, FormGroup, ControlLabel } from 'react-bootstrap'
+import {ProblemSetData} from 'data/Data'
 
 export default class ProblemSetBoard extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = ProblemSetData;
+    super(props)
+    this.state = ProblemSetData
     this.getProblemSet = this.getProblemSet.bind(this)
-    this.selectSet = this.selectSet.bind(this);
+    this.selectSet = this.selectSet.bind(this)
   }
 
   getProblemSet() {
-    let selectedSet = this.state.selectedSet;
-    let problemSet = this.state.weeks[selectedSet].problems;
-    return problemSet;
+    const selectedSet = this.state.selectedSet
+    const problemSet = this.state.weeks[selectedSet].problems
+    return problemSet
   }
 
   selectSet(e) {
-      this.setState({selectedSet: e.target.value});
+      this.setState({selectedSet: e.target.value})
   }
 
   render() {

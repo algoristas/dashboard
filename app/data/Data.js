@@ -267,21 +267,21 @@ const ProblemSetData = {
           id: '13135',
           judge: 'https://uva.onlinejudge.org',
           url: 'https://goo.gl/ar7gyk',
-          topics: ['',],
+          topics: ['Math','Binary Search'],
         },
         {
           title: 'Fewest Flops',
           id: '11552',
           judge: 'https://uva.onlinejudge.org',
           url: 'https://goo.gl/FyRlZI',
-          topics: ['',],
+          topics: ['DP','String'],
         },
         {
           title: 'Codejam Round 1A 2015',
           id: 'Round 1A 2015',
           judge: 'https://uva.onlinejudge.org',
           url: 'https://goo.gl/gLdN07',
-          topics: ['',],
+          topics: ['Binary Search','Math','Ad-Hoc'],
         },
       ],
     },
@@ -298,6 +298,6 @@ const ProblemSetData = {
       ],
     },
   ],
-};
+}
 
-export {GlobalData, IndividualData, ProblemSetData};
+export {GlobalData, IndividualData, ProblemSetData}
