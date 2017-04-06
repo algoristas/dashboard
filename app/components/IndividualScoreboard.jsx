@@ -24,9 +24,9 @@ export default class IndividualScoreboard extends React.Component {
   getCalendar() {
     const user = this.state.selectedUser
     const weeks = this.state.weeks.sort((a, b) => { return a.date > b.date })
-    const calendar = []
+    let calendar = []
     weeks.forEach((week) => {
-      const data = { date: week.date.toString(), topics: week.topics }
+      let data = { date: week.date.toString(), topics: week.topics }
       PROBLEMS_IDS.forEach((problem) => {
         data[problem] = {
             solved: week.problems[problem].indexOf(user) !== -1
