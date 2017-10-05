@@ -40,7 +40,7 @@ export default class ProblemSetBoard extends React.Component {
         <Table striped bordered condensed hover>
           <thead>
             <tr>
-              <th>Week#</th>
+              <th>Problem #</th>
               <th>Title</th>
               <th>Topics</th>
               <th>Id</th>
