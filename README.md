@@ -19,3 +19,17 @@ Clone this repo manually or use `brunch new dir -s brunch/with-react`
     * `public/` dir is fully auto-generated and served by HTTP server.  Write your code in `app/` dir.
     * Place static files you want to be copied from `app/assets/` to `public/`.
     * [Brunch site](http://brunch.io), [Getting started guide](https://github.com/brunch/brunch-guide#readme)
+
+## How to contribute
+Contributions are welcome, you can review [current issues](https://github.com/algoristas/dashboard/issues) or create a new one. 
+
+### Pull Request process
+Once you selected issue to work on, follow these steps to submit your changes, then create a pull request.
+
+* Inside repository create a new branch `git checkout -b <your_branch>`
+* Commit your changes trying to follow [guidelines](https://chris.beams.io/posts/git-commit/)
+* Now submit your branch to remote repository `git push origin <your_branch>`
+
+Your branch will appear in Github interface, from there you can create the Pull Request and assign people to look into it.
+
+
