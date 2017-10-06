@@ -15,12 +15,12 @@ export default class AllProblemsBoard extends React.Component {
         <h2 className='page-title'> Full Problem List </h2> 
         <Table striped bordered condensed hover>
           <thead>
-            <th>   Week #  </th> 
+            <th> Week # </th> 
             <th> Problem # </th>
-            <th>  Title    </th>
-            <th>   Tags    </th>
-            <th>    Id     </th>
-            <th>    URL    </th>
+            <th> Title </th>
+            <th> Tags </th>
+            <th> Id </th>
+            <th> URL </th>
           </thead>
           <tbody>
             {
@@ -45,12 +45,4 @@ export default class AllProblemsBoard extends React.Component {
     )
   }
 }
-
-
-
-
-
-
-
-
 
