@@ -1,10 +1,10 @@
 import React from 'react'
 import {Nav, NavItem} from 'react-bootstrap'
 
-import GlobalScoreboard from 'components/GlobalScoreboard'
+import GlobalScoreboard     from 'components/GlobalScoreboard'
 import IndividualScoreboard from 'components/IndividualScoreboard'
-import ProblemSetBoard from 'components/ProblemSetBoard'
-
+import ProblemSetBoard      from 'components/ProblemSetBoard'
+import AllProblemsBoard     from 'components/AllProblemsBoard' 
 
 export default class App extends React.Component {
   constructor(props) {
@@ -28,13 +28,15 @@ export default class App extends React.Component {
 
           <div id='dashboard'>
             <Nav bsStyle='pills' activeKey={this.state.activeKey} onSelect={this.handleSelect}>
-              <NavItem eventKey={'global'}>Global scoreboard</NavItem>
-              <NavItem eventKey={'individual'}>Individual scoreboard</NavItem>
-              <NavItem eventKey={'problem-set'}> Weekly Problem Set</NavItem>
+              <NavItem eventKey={'global'      }>  Global scoreboard     </NavItem>
+              <NavItem eventKey={'individual'  }>  Individual scoreboard </NavItem>
+              <NavItem eventKey={'problem-set' }>  Weekly Problem Set    </NavItem>
+              <NavItem eventKey={'all-problems'}>  All Problems          </NavItem>
             </Nav>
-            { this.state.activeKey == 'global' && <GlobalScoreboard /> }
-            { this.state.activeKey == 'individual' && <IndividualScoreboard /> }
-            { this.state.activeKey == 'problem-set' && <ProblemSetBoard /> }
+            { this.state.activeKey == 'global'       && <GlobalScoreboard /> }
+            { this.state.activeKey == 'individual'   && <IndividualScoreboard /> }
+            { this.state.activeKey == 'problem-set'  && <ProblemSetBoard /> }
+            { this.state.activeKey == 'all-problems' && <AllProblemsBoard/> }
           </div>
       </div>
     )
