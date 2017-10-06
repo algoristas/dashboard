@@ -21,10 +21,10 @@ Clone this repo manually or use `brunch new dir -s brunch/with-react`
     * [Brunch site](http://brunch.io), [Getting started guide](https://github.com/brunch/brunch-guide#readme)
 
 ## How to contribute
-Contribution are welcome, you can review [current issues](https://github.com/algoristas/dashboard/issues) or create a new one. 
+Contributions are welcome, you can review [current issues](https://github.com/algoristas/dashboard/issues) or create a new one. 
 
 ### Pull Request process
-Once you selected issue to work on, follow these steps to submit your changesi, then create a pull request.
+Once you selected issue to work on, follow these steps to submit your changes, then create a pull request.
 
 * Inside repository create a new branch `git checkout -b <your_branch>`
 * Commit your changes trying to follow [guidelines](https://chris.beams.io/posts/git-commit/)
