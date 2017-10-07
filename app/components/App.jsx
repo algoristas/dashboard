@@ -28,15 +28,15 @@ export default class App extends React.Component {
 
           <div id='dashboard'>
             <Nav bsStyle='pills' activeKey={this.state.activeKey} onSelect={this.handleSelect}>
-              <NavItem eventKey={'global'}> Global scoreboard </NavItem>
-              <NavItem eventKey={'individual'}> Individual scoreboard </NavItem>
-              <NavItem eventKey={'problem-set'}> Weekly Problem Set </NavItem>
-              <NavItem eventKey={'all-problems'}> All Problems </NavItem>
+              <NavItem eventKey={'global'}>Global scoreboard</NavItem>
+              <NavItem eventKey={'individual'}>Individual scoreboard</NavItem>
+              <NavItem eventKey={'problem-set'}>Weekly Problem Set</NavItem>
+              <NavItem eventKey={'all-problems'}>All Problems</NavItem>
             </Nav>
-            { this.state.activeKey=='global' && <GlobalScoreboard /> }
-            { this.state.activeKey=='individual' && <IndividualScoreboard /> }
-            { this.state.activeKey=='problem-set' && <ProblemSetBoard /> }
-            { this.state.activeKey=='all-problems' && <AllProblemsBoard/> }
+            { this.state.activeKey == 'global' && <GlobalScoreboard /> }
+            { this.state.activeKey == 'individual' && <IndividualScoreboard /> }
+            { this.state.activeKey == 'problem-set' && <ProblemSetBoard /> }
+            { this.state.activeKey == 'all-problems' && <AllProblemsBoard/> }
           </div>
       </div>
     )
