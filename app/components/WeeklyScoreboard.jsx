@@ -1,8 +1,8 @@
 import React from 'react'
-import {Table, FormControl, FormGroup, ControlLabel } from 'react-bootstrap'
+import {Table, FormControl, FormGroup, ControlLabel} from 'react-bootstrap'
 import {ProblemSetData} from 'data/Data'
 
-export default class ProblemSetBoard extends React.Component {
+export default class WeeklyScoreboard extends React.Component {
   constructor(props) {
     super(props)
     this.state = ProblemSetData
@@ -23,7 +23,7 @@ export default class ProblemSetBoard extends React.Component {
   render() {
     return (
       <div>
-        <h2 className='page-title'>Problem Set </h2>
+        <h2 className='page-title'>Weekly scoreboard</h2>
         <div id='select-user-form' className='form-inline'>
           <FormGroup>
             <ControlLabel className='form-inline-title'>Problem Set: </ControlLabel>
@@ -38,32 +38,22 @@ export default class ProblemSetBoard extends React.Component {
         </div>
 
         <Table striped bordered condensed hover>
-          <thead>
-            <tr>
-              <th>Id</th>
-              <th>Problem name</th>
-              <th>URL</th>
-              <th>Difficulty</th>
-              <th>Topics</th>
-            </tr>
+          <thead className='thead-light'>
+              <tr>
+                <th>#</th>
+                <th>Username</th>
+                <th>Problems solved</th>
+                {
+                  this.getProblemSet().map((p, i) => {
+                    return (<th><a href={p.url}> P{i+1} </a></th>)
+                  })
+                }
+              </tr>
           </thead>
           <tbody>
-            {
-              this.getProblemSet().map((p, i) => {
-                return (
-                  <tr key={i}>
-                    <td>W{this.state.selectedSet}P{i + 1}</td>
-                    <td>{p.title}</td>
-                    <td><a href={p.url}>[External link]</a></td>
-                    <td>{p.difficulty}</td>
-                    <td>{p.topics.join(', ')}</td>
-                  </tr>
-                )
-              })
-            }
           </tbody>
         </Table>
       </div>
-    );
+    )
   }
 }
