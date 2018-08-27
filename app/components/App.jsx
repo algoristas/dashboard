@@ -24,6 +24,7 @@ export default class App extends React.Component {
       <div id='content'>
           <div id='header'>
             <center><h1>Algorists</h1></center>
+            <img src="/a.png" alt="a"></img>
           </div>
 
           <div id='dashboard'>
