@@ -52,11 +52,11 @@ const IndividualData = {
 
 const JudgeIconsData = {
   judges: [
-    {name: 'https://omegaup.com/', path: '../assets/img/omegaup.jpg'},
-    {name: 'https://uva.onlinejudge.org', path: '../assets/img/logo-uvaj.png'},
-    {name: 'http://codeforces.com', path: '../assets/img/codeforces.png'},
-    {name: 'https://www.codechef.com', path: '../assets/img/codechef.png'},
-    {name: 'http://coj.uci.cu', path: '../assets/img/coj.jpeg'}
+    {name: 'https://omegaup.com/', path: '/img/omegaup.jpg'},
+    {name: 'https://uva.onlinejudge.org', path: '/img/uva-logo.png'},
+    {name: 'http://codeforces.com', path: '/img/codeforces.png'},
+    {name: 'https://www.codechef.com', path: '/img/codechef.png'},
+    {name: 'http://coj.uci.cu', path: '/img/coj.jpeg'}
   ]
 }
 

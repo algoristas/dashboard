@@ -10,6 +10,16 @@ export default class AllProblemsBoard extends React.Component {
     this.icons = JudgeIconsData
   }
 
+  getJudgeIcon(j) {
+    return (
+      this.icons.judges.map((judge) => {
+        if (judge.name === j)
+          return (<img src={judge.path} alt={judge.name} key={judge.name}
+                    className="icon-judge"></img>)
+      })
+    )
+  }
+
   render () {
     return (
       <div>
@@ -32,7 +42,7 @@ export default class AllProblemsBoard extends React.Component {
                     <tr key={i}>
                       <td>W{j+1}P{i}</td>
                       <td>{p.title}</td>
-                      <td><a href={p.url}>[External link]</a></td>
+                      <td><a href={p.url}>{this.getJudgeIcon(p.judge)} [External link]</a></td>
                       <td>{p.difficulty}</td>
                       <td>{p.topics.join(', ')}</td>
                     </tr>

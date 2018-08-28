@@ -120,3 +120,15 @@ h5 > a {
 .form-inline-title {
   margin: 0 20px 0 0;
 }
+
+/* Class: icon-judge
+ * Fix the dimenssions of the judge icons used in lists */
+.icon-judge {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.icon-judge:hover {
+  filter: brightness(.6);
+}
+
