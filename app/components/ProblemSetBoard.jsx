@@ -1,11 +1,12 @@
 import React from 'react'
 import {Table, FormControl, FormGroup, ControlLabel } from 'react-bootstrap'
-import {ProblemSetData} from 'data/Data'
+import {ProblemSetData, JudgeIconsData} from 'data/Data'
 
 export default class ProblemSetBoard extends React.Component {
   constructor(props) {
     super(props)
     this.state = ProblemSetData
+    this.icons = JudgeIconsData
     this.getProblemSet = this.getProblemSet.bind(this)
     this.selectSet = this.selectSet.bind(this)
   }
@@ -14,6 +15,16 @@ export default class ProblemSetBoard extends React.Component {
     const selectedSet = this.state.selectedSet
     const problemSet = this.state.weeks[selectedSet].problems
     return problemSet
+  }
+
+  getJudgeIcon(j) {
+    return (
+      this.icons.judges.map((judge) => {
+        if (judge.name === j)
+          return (<img src={judge.path} alt={judge.name} key={judge.name}
+                    className="icon-judge"></img>)
+      })
+    )
   }
 
   selectSet(e) {
@@ -26,7 +37,7 @@ export default class ProblemSetBoard extends React.Component {
         <h2 className='page-title'>Problem Set </h2>
         <div id='select-user-form' className='form-inline'>
           <FormGroup>
-            <ControlLabel>Problem Set: </ControlLabel>
+            <ControlLabel className='form-inline-title'>Problem Set: </ControlLabel>
             <FormControl componentClass="select" placeholder="select" onChange={this.selectSet}>
               {
                 this.state.weeks.map((week, key) => {
@@ -40,12 +51,11 @@ export default class ProblemSetBoard extends React.Component {
         <Table striped bordered condensed hover>
           <thead>
             <tr>
-              <th>Problem #</th>
-              <th>Title</th>
-              <th>Topics</th>
               <th>Id</th>
-              <th>Judge</th>
+              <th>Problem name</th>
               <th>URL</th>
+              <th>Difficulty</th>
+              <th>Topics</th>
             </tr>
           </thead>
           <tbody>
@@ -53,12 +63,11 @@ export default class ProblemSetBoard extends React.Component {
               this.getProblemSet().map((p, i) => {
                 return (
                   <tr key={i}>
-                    <td>{i + 1}</td>
+                    <td>W{this.state.selectedSet}P{i + 1}</td>
                     <td>{p.title}</td>
+                    <td><a href={p.url}>{this.getJudgeIcon(p.judge)} [External link]</a></td>
+                    <td>{p.difficulty}</td>
                     <td>{p.topics.join(', ')}</td>
-                    <td>{p.id}</td>
-                    <td><a href={p.judge}>{p.judge}</a></td>
-                    <td><a href={p.url}>{p.url}</a></td>
                   </tr>
                 )
               })

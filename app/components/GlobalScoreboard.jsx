@@ -16,9 +16,9 @@ export default class GlobalScoreboard extends React.Component {
   render() {
     return (
       <div>
-        <h2 className='page-title'>Global scoreboard</h2>
+        <h2 className='page-title'>User ranking</h2>
         <Table striped bordered condensed hover>
-          <thead>
+          <thead className='thead-light'>
               <tr>
                 <th>#</th>
                 <th>Username</th>
