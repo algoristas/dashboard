@@ -1,11 +1,7 @@
 import React from 'react'
-import {Nav, NavItem} from 'react-bootstrap'
-
-import GlobalScoreboard from 'components/GlobalScoreboard'
-import IndividualScoreboard from 'components/IndividualScoreboard'
-import ProblemSetBoard from 'components/ProblemSetBoard'
-import AllProblemsBoard from 'components/AllProblemsBoard'
-import WeeklyScoreboard from 'components/WeeklyScoreboard'
+import { Nav, Navbar, NavItem } from 'react-bootstrap'
+import { Link } from "react-router-dom";
+import Routes from "components/Routes";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -32,20 +28,14 @@ export default class App extends React.Component {
           </div>
 
           <div id='dashboard'>
-            <Nav bsStyle='pills' activeKey={this.state.activeKey} onSelect={this.handleSelect} className='dashboard-menu'>
-              <NavItem eventKey={'global'}>Global scoreboard</NavItem>
-              <NavItem eventKey={'individual'}>Individual scoreboard</NavItem>
-              <NavItem eventKey={'weekly-scoreboard'}>Weekly scoreboard</NavItem>
-              <NavItem eventKey={'weekly-problem-set'}>Weekly Problem Set</NavItem>
-              <NavItem eventKey={'all-problems'}>All Problems</NavItem>
+            <Nav bsStyle='tabs' activeKey={this.state.activeKey} onSelect={this.handleSelect} className='dashboard-menu'>
+              <Link to="/global">Global scoreboard</Link>
+              <Link to="/individual">Individual scoreboard</Link>
+              <Link to='/weekly'>Weekly scoreboard</Link>
+              <Link to={'/problem-set'}>Problem Set</Link>
+              <Link to={'/all-problems'}>All Problems</Link>
             </Nav>
-            <div className='dashboard-content'>
-              { this.state.activeKey == 'global' && <GlobalScoreboard /> }
-              { this.state.activeKey == 'individual' && <IndividualScoreboard /> }
-              { this.state.activeKey == 'weekly-scoreboard' && <WeeklyScoreboard /> }
-              { this.state.activeKey == 'weekly-problem-set' && <ProblemSetBoard /> }
-              { this.state.activeKey == 'all-problems' && <AllProblemsBoard/> }
-            </div>
+            <Routes />
           </div>
       </div>
     )
